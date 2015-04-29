@@ -1,7 +1,7 @@
 from flask import Flask, send_from_directory, render_template
 app = Flask(__name__)
 
-@app.route('/home')
+@app.route('/')
 def home():
     #return 'hello'
     return send_from_directory('templates', 'bootstrapMain.html')
