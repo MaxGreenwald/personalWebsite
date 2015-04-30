@@ -31,3 +31,10 @@ ul.navigationBar li a{
 #fbLogout {
 	display: none;
 }
+
+#downloadUserView {
+	display: none;
+}
+#successfulLogin {
+	display: none;
+}

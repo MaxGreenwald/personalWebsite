@@ -14,7 +14,11 @@ Parse.initialize("qLW3u3c0SK9XuyBF6lIeiFRc83kLU5Oj5xB6UgMf", "okeGyP0jil6ZJyPjPJ
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
       $("#fbLogin").hide();
+      
+      $("#successfulLogin").show();
+      $("#signIn").hide();
       $("#fbLogout").show();
+
       
       loggedIn = true;
       you = response.authResponse.accessToken;
@@ -28,7 +32,8 @@ Parse.initialize("qLW3u3c0SK9XuyBF6lIeiFRc83kLU5Oj5xB6UgMf", "okeGyP0jil6ZJyPjPJ
       // they are logged into this app or not.
       fbLogout();
       document.getElementById('status').innerHTML = 'Please log ' +
-      'into Facebook.';
+      'in with Facebook.';
+
   }
 }
 
@@ -89,16 +94,25 @@ window.fbAsyncInit = function() {
   	Parse.FacebookUtils.logIn(null, {
   		success: function(swapUserWithLocation) {
   			if (!swapUserWithLocation.existed()) {
+          alert("download the app bitch");
+          $("#downloadUserView").show();
+          $("#signIn").hide();
+          $("#fbLogin").show();
+          $("#fbLogout").show();
+          
   			} else {
+         
+
+          $("#showAllUsers").show();
+          $("#showYourSwaps").show();
   			}
         you = swapUserWithLocation.id;
 
         //if in DB show stuff, if not go sign up //
-  			$("#showAllUsers").show();
-        $("#showYourSwaps").show();
+  			
   		},
   		error: function(swapUserWithLocation, error) {
-  			alert("User cancelled the Facebook login or did not fully authorize.");
+  			
   		}
   	});
 
@@ -106,11 +120,8 @@ window.fbAsyncInit = function() {
 
 
 
-  	console.log('Welcome!  Fetching your information.... ');
   	FB.api('/me', function(response) {
-  		console.log('Successful login for: ' + response.name);
-  		document.getElementById('status').innerHTML =
-  		'Thanks for logging in, ' + response.name + '!';
+  		
   	});
   }
 
@@ -130,8 +141,9 @@ FB.login(function(response) {
      $("#fbLogin").hide();
      $("#fbLogout").show();
      linkToParse();
+     window.location.reload();
    } else {
-     console.log('User cancelled login or did not fully authorize.');
+     
    }
  });
 }
