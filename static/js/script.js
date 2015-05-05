@@ -249,7 +249,7 @@ function displayPeople(dataSet) {
   html += 'height="200" width="200" border = "5"><p>';
   html += '<span class="glyphicon glyphicon-user"></span> : ' + dataSet[i][1] + ' ' + dataSet[i][2] + '</p><p>';
   html +=  '<span class="glyphicon glyphicon-earphone"></span> : ' + dataSet[i][3] + '</p>';
-  html += '<p> <i class="fa fa-facebook fa-lg"></i> : Friend <a href="' + dataSet[i][4] + '"  target="_blank">' + dataSet[i][1] + '</a></p></div> ';
+  html += '<p> <span class="glyphicon glyphicon-plus"></span> : Friend <a href="' + dataSet[i][4] + '"  target="_blank">' + dataSet[i][1] + '</a></p></div> ';
   
   if((i % 3) == 0 && i != 0) html += '</div> <div class="row">';
   };
