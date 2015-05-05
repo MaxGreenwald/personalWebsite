@@ -183,7 +183,8 @@ function showSwaps() {
             row.push(result.get("fbLink"));
             return row;
           });
-          displayPeople(dataset);
+          if (call == "completedSwaps") displayPeople(dataset);
+          else displayRequested(dataset);
         },
         error: function(error) {
           alert("Error: " + error.code + " " + error.message);
@@ -199,44 +200,60 @@ function showSwaps() {
 }
 
 
-function showProfile() {
-  you = String(you);
-  var swapUsers = Parse.Object.extend("swapUserWithLocationAndLink");
-  var query = new Parse.Query(swapUsers);
-  var query1 = new Parse.Query(swapUsers);
+// function showProfile() {
+//   you = String(you);
+//   var swapUsers = Parse.Object.extend("swapUserWithLocationAndLink");
+//   var query = new Parse.Query(swapUsers);
+//   var query1 = new Parse.Query(swapUsers);
 
-  var yourSwaps = [];
-  query.get("j5c9SLDgm4", {
-    success: function(object) {
-      yourSwaps = object.get("completedSwaps");
-      query1.containedIn("objectId", yourSwaps);
-      query1.find({
-        success: function(results) {
-          var dataset = results.map(function(result) {
-            var row = [];
-            row.push(result.get("imageFile").url());
-            row.push(result.get("firstName"));
-            row.push(result.get("lastName"));
-            row.push(result.get("phoneNumber"));
-            row.push(result.get("fbLink"));
+//   var yourSwaps = [];
+//   query.get(you, {
+//     success: function(object) {
+//       yourSwaps = object.get("completedSwaps");
+//       query1.containedIn("objectId", yourSwaps);
+//       query1.find({
+//         success: function(results) {
+//           var dataset = results.map(function(result) {
+//             var row = [];
+//             row.push(result.get("imageFile").url());
+//             row.push(result.get("firstName"));
+//             row.push(result.get("lastName"));
+//             row.push(result.get("phoneNumber"));
+//             row.push(result.get("fbLink"));
 
-            return row;
-          });
-          displayPeople(dataset);
-        },
-        error: function(error) {
-          alert("Error: " + error.code + " " + error.message);
-        }
-      });
-    },
+//             return row;
+//           });
+//           displayPeople(dataset);
+//         },
+//         error: function(error) {
+//           alert("Error: " + error.code + " " + error.message);
+//         }
+//       });
+//     },
 
-    error: function(error) {
-      alert("Error: " + error.code + " " + error.message);
-    }
-  });
+//     error: function(error) {
+//       alert("Error: " + error.code + " " + error.message);
+//     }
+//   });
 
+// }
+function displayRequested(dataSet) {
+  var showPeople = document.getElementById("showPeople");
+  
+  var html = '<div class="row">';
+
+  for (var i = 0; i < dataSet.length; i++) {
+  html += '<div class="col-md-4 portfolio-item"><img class="img-circle" ';
+  html += 'src="' + dataSet[i][0] + '"';
+  html += 'height="200" width="200" border = "5"><p>';
+  html += '<span class="glyphicon glyphicon-user"></span> : ' + dataSet[i][1] + ' ' + dataSet[i][2] + '</p>';
+  html += '</div> ';
+  
+  if((i % 3) == 0 && i != 0) html += '</div> <div class="row">';
+  };
+  html += '</div>'
+  showPeople.innerHTML = html;
 }
-
 
 function displayPeople(dataSet) {
   var showPeople = document.getElementById("showPeople");
