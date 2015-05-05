@@ -1,4 +1,4 @@
-Parse.initialize("qLW3u3c0SK9XuyBF6lIeiFRc83kLU5Oj5xB6UgMf", "okeGyP0jil6ZJyPjPJjIJVTCOBy5vzB184MsMs1I");
+//Parse.initialize("Ntrn4oOn926ELlVzwozZL2hJpR3OHN87Z0vIr8f0", "119CjghihfTpAA0qHFt5l6xyyiThZuJks1Zzt0cK");
 
 
 var yourSwaps;
@@ -6,18 +6,18 @@ var call;
 
 function showYourRequests() {
   call = "requestedSwaps";
-  showSwaps()
+  showSwaps();
 }
 
 function showYourSwaps() {
   call = "completedSwaps";
-  showSwaps()
+  showSwaps();
 }
 
 function showSwaps() {
-	var users = Parse.Object.extend("User");
-	var query = new Parse.Query(users);
-  var query1 = new Parse.Query(users);
+	var swapUsers = Parse.Object.extend("swapUserWithLocationAndLink");
+	var query = new Parse.Query(swapUsers);
+  var query1 = new Parse.Query(swapUsers);
 
     var yourSwaps = [];
     query.get(you, {
@@ -63,4 +63,3 @@ $('#userTable').DataTable( {
 } ); 
 
 }
-
