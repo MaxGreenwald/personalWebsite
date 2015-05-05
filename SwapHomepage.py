@@ -11,9 +11,5 @@ def user():
     #return 'hello'
     return send_from_directory('templates', 'userView.html')
 
-@app.route('/tableTest')
-def about2():
-    return send_from_directory('templates', 'tableTest.html')
-
 if __name__ == '__main__':
     app.run(debug = True)
