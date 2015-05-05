@@ -151,7 +151,7 @@ var yourSwaps;
 var call;
 
 function showYourRequests() {
-  call = "recievedSwaps";
+  call = "receivedSwaps";
   showSwaps();
 }
 
