@@ -78,21 +78,6 @@ var you;
     version    : 'v2.2' // use version 2.2
   });
 
-
-
-
-  // Now that we've initialized the JavaScript SDK, we call 
-  // FB.getLoginStatus().  This function gets the state of the
-  // person visiting this page and can return one of three states to
-  // the callback you provide.  They can be:
-  //
-  // 1. Logged into your app ('connected')
-  // 2. Logged into Facebook, but not your app ('not_authorized')
-  // 3. Not logged into Facebook and can't tell if they are logged into
-  //    your app or not.
-  //
-  // These three cases are handled in the callback function.
-
   FB.getLoginStatus(function(response) {
     statusChangeCallback(response);
   });
@@ -133,19 +118,9 @@ var you;
    });
   }
 
-// FB.Event.subscribe("auth.logout", function() {window.location = '/logout'});
 
 
-
-
-
-
-
-
-
-
-//Parse.initialize("Ntrn4oOn926ELlVzwozZL2hJpR3OHN87Z0vIr8f0", "119CjghihfTpAA0qHFt5l6xyyiThZuJks1Zzt0cK");
-
+//SWAP Display info data
 
 var yourSwaps;
 var call;
@@ -173,7 +148,6 @@ function showSwaps() {
       query1.containedIn("objectId", yourSwaps);
       query1.find({
         success: function(results) {
-
           var dataset = results.map(function(result) {
             var row = [];
             row.push(result.get("imageFile").url());
@@ -200,43 +174,6 @@ function showSwaps() {
 }
 
 
-// function showProfile() {
-//   you = String(you);
-//   var swapUsers = Parse.Object.extend("swapUserWithLocationAndLink");
-//   var query = new Parse.Query(swapUsers);
-//   var query1 = new Parse.Query(swapUsers);
-
-//   var yourSwaps = [];
-//   query.get(you, {
-//     success: function(object) {
-//       yourSwaps = object.get("completedSwaps");
-//       query1.containedIn("objectId", yourSwaps);
-//       query1.find({
-//         success: function(results) {
-//           var dataset = results.map(function(result) {
-//             var row = [];
-//             row.push(result.get("imageFile").url());
-//             row.push(result.get("firstName"));
-//             row.push(result.get("lastName"));
-//             row.push(result.get("phoneNumber"));
-//             row.push(result.get("fbLink"));
-
-//             return row;
-//           });
-//           displayPeople(dataset);
-//         },
-//         error: function(error) {
-//           alert("Error: " + error.code + " " + error.message);
-//         }
-//       });
-//     },
-
-//     error: function(error) {
-//       alert("Error: " + error.code + " " + error.message);
-//     }
-//   });
-
-// }
 function displayRequested(dataSet) {
   var showPeople = document.getElementById("showPeople");
   
@@ -249,7 +186,7 @@ function displayRequested(dataSet) {
   html += '<span class="glyphicon glyphicon-user"></span> : ' + dataSet[i][1] + ' ' + dataSet[i][2] + '</p>';
   html += '</div> ';
   
-  if((i % 3) == 0 && i != 0) html += '</div> <div class="row">';
+  if(((i+1) % 3) == 0 && i != 0) html += '</div> <div class="row">';
   };
   html += '</div>'
   showPeople.innerHTML = html;
@@ -267,8 +204,9 @@ function displayPeople(dataSet) {
   html += '<span class="glyphicon glyphicon-user"></span> : ' + dataSet[i][1] + ' ' + dataSet[i][2] + '</p><p>';
   html +=  '<span class="glyphicon glyphicon-earphone"></span> : ' + dataSet[i][3] + '</p>';
   html += '<p> <span class="glyphicon glyphicon-plus"></span> : Friend <a href="' + dataSet[i][4] + '"  target="_blank">' + dataSet[i][1] + '</a></p></div> ';
-  
-  if((i % 3) == 0 && i != 0) html += '</div> <div class="row">';
+  if(((i+1) % 3) == 0 && i != 0) {
+    html += '</div> <div class="row">';
+  }
   };
   html += '</div>'
   showPeople.innerHTML = html;
