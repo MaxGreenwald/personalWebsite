@@ -5,9 +5,5 @@ app = Flask(__name__)
 def home():
     return send_from_directory('templates', 'home.html')
 
-@app.route('/userView')
-def user():
-    return send_from_directory('templates', 'userView.html')
-
 if __name__ == '__main__':
     app.run(debug = True)
