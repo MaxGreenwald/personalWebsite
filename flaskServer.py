@@ -7,7 +7,7 @@ def home():
     return send_from_directory('templates', 'home.html')
 
 @app.route('/blog')
-def home():
+def blog():
     return send_from_directory('templates', 'blog.html')
 
 if __name__ == '__main__':
