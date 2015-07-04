@@ -303,6 +303,18 @@ ol ul {
 li {
   margin-bottom: 1rem; }
 
+/* LIST #2 */
+#list2 ol { font-style:italic; font-size:13px;}
+#list2 ol li { }
+#list2 ol li p { padding:8px; font-style:normal; font-family:Arial; font-size:13px; border-left: 1px solid #999; }
+#list2 ol li p em { display:block; font-size: 24px; font-family:inherit; font-style:inherit;}
+
+/* LIST #3 */
+#list3 ol { font-style:italic; font-size:13px;}
+#list3 ol li { }
+#list3 ol li p { padding:8px; font-style:normal; font-family:Arial; font-size:13px; border-right: 1px solid #999; }
+#list3 ol li p em { display:block; font-size: 24px; font-family:inherit; font-style:inherit;}
+
 
 /* Code
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
