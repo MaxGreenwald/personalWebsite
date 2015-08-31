@@ -1,15 +1,17 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Blog PAge</title>
-		
-		<link rel="shortcut icon" href="static/img/swapLogo.ico">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="one touch contact exchange" content="">
+  <meta name="COS 333" content="">
+
+  <title>Blog Page</title>
+
+  <link rel="shortcut icon" href="static/img/swapLogo.ico">
 
   <!-- Bootstrap Core CSS -->
   <link href="static/css/bootstrap.min.css" rel="stylesheet">
@@ -29,79 +31,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
                 <!-- Bootstrap Core JavaScript -->
                 <script src="static/js/bootstrap.min.js"></script>
-	    <link href="static/css/style.css" rel="stylesheet" type="text/css" media="all" />
-	   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-	   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	   <script type="text/javascript">
-			$(window).load(function(){
-				$('div.description').each(function(){
-					$(this).css('display', 'block');
-				});
-				
-				$('div.content-top-grid').hover(function(){
-					$(this).children('.description').stop().fadeTo(500, 1);
-				},function(){
-					$(this).children('.description').stop().fadeTo(500, 0);
-				});
-				
-			});
-	</script>
-	<!---start-blog---->
-	<script type="text/javascript" src="static/js/jquery.easing.min.js"></script>	
-	<script type="text/javascript" src="static/js/jquery.mixitup.min.js"></script>
-	<script type="text/javascript">
-	$(function () {
-		
-		var filterList = {
-		
-			init: function () {
-			
-				// MixItUp plugin
-				// http://mixitup.io
-				$('#portfoliolist').mixitup({
-					targetSelector: '.portfolio1',
-					filterSelector: '.filter',
-					effects: ['fade'],
-					easing: 'snap',
-					// call the hover effect
-					onMixEnd: filterList.hoverEffect()
-				});				
-			
-			},
-			
-			hoverEffect: function () {
-			
-				// Simple parallax effect
-				$('#portfoliolist .portfolio1').hover(
-					function () {
-						$(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
-						$(this).find('img').stop().animate({top: -2}, 500, 'easeOutQuad');				
-					},
-					function () {
-						$(this).find('.label').stop().animate({bottom: -40}, 200, 'easeInQuad');
-						$(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');								
-					}		
-				);				
-			
-			}
 
-		};
-		
-		// Run the show!
-		filterList.init();
-	});	
-	</script>
-	<!---//start-blog---->
-	</head>
-	<body>
-		<!---start-wrap---->
-		<div class="wrap">
-		<!---strat-header---->
-		<div class="header"> 
-			
+                <!-- Plugin JavaScript -->
+                <script src="static/js/jquery.easing.min.js"></script>
 
+      </head>
 
-			 <!-- Navigation -->
+      <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+        <!-- Navigation -->
         <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
           <div class="container">
             <div class="navbar-header">
@@ -118,14 +56,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <li class="hidden">
                   <a href="#page-top"></a>
                 </li>
-				<li>
-                  <a class="page-scroll" href="index.html">Home</a>
-                </li>
+
                 <li>
-                  <a class="page-scroll" href="#about">About</a>
+                  <a class="page-scroll" href="/index.html">Home</a>
                 </li>
+
                 <li>
-                  <a class="page-scroll" href="#contact">Contact</a>
+                  <a class="page-scroll" href="/index.html#projects">Projects</a>
                 </li>
                 
               </ul>
@@ -137,106 +74,57 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 
 
+<!-- About Section -->
+          <section id="projects" class="container content-section">
+            <div class="columns">
+
+              <div class="col-lg-12 col-md-12  col-sm-12">
+              	    <br>
+                    <br>
+                     <br>
+                      <br>
+                <h1 align = "left"> Max's Blogs </h1>
+
+                     <br>
+                      <br>
+
+                 <div id="list3" align = "left">
+    <ol>
+      <li><p><em><a href="//medium.com/@maxgreenwald/" target="_blank">Personal Blog</span></a></em> My personal thoughts on life and things. Includes posts about how to get sponsorship money for hackathons, my 9 favorite apps and lessons learned in Information Security.</p></li>
+      <li><p><em><a href="//maxthewolframstudenthacker.tumblr.com/" target="_blank"> Hacking On Wolfram Language Blog</span></a></em> A compilation of all things Wolfram Language from the perspective of a hacker. How to get onboarded with the language, funniest and coolest functions, how to make a web app in Wolfram Language among others.  </p></li>
+      <li><p><em><a href="//info.reactful.com/blog/author/max-greenwald" target="_blank">Reactful Blog</span></a></em>Thought pieces written about Digital Body Language, Web Tracking and Web Analytics from when I interned @ Reactful in Summer 2014, a data analytics conversation optimization company.</p></li>
 
 
-		</div>
-		<!---//End-header---->
-		<!---start-content---->
-		<!---start-blog---->
-		<div class="blog">
-			<div class="wrap">
-				<div class="blog-header">
-					<h3>Blog</h3>
-				</div>
-			</div>
-			<ul id="filters" class="clearfix">
-				<div class="wrap"> 
-						<li><span class="filter active" data-filter="app card icon logo web">All</span></li>
-						<li><span class="filter" data-filter="app">App</span></li>
-						<li><span class="filter" data-filter="card">Design</span></li>
-						<li><span class="filter" data-filter="icon">Mobile</span></li>
-						<li><span class="filter" data-filter="web">Technology</span></li>
-						<div class="clear"> </div>
-				</div>
-			</ul>
-			<div class="wrap"> 
-			<div class="blog-grids" id="portfoliolist">
-				<div class="blog-articla-grid  portfolio1 logo1" data-cat="logo">
-					<div class="blog-articla-grid-pic">
-						<a href="bsingle.html"><img src="static/images/artpic2.png" alt=" "></a>
-					</div>
-					<div class="blog-articla-grid-info">
-						<h3><a href="bsingle.html">Lorem ipsum dolor sit amet adipisicing elit?</a></h3>
-						<ul>
-							<li><p>post on <a href="bsingle.html">July 28,2013</a></p></li>
-							<li><a href="bsingle.html"> James Reed</a></li>
-							<li><a href="bsingle.html"> Technology</a></li>
-							<p class="artical-para">
-								consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-							</p>
-							<a class="artbtn" href="bsingle.html">Read More</a>
-						</ul>
-					</div>
-					<div class="clear"> </div>
-				</div>
-				<div class="blog-articla-grid  portfolio1 logo1" data-cat="app">
-					<div class="blog-articla-grid-pic">
-						<a href="bsingle.html"><img src="static/images/artpic1.png" alt=" "></a>
-					</div>
-					<div class="blog-articla-grid-info">
-						<h3><a href="bsingle.html">Sed do eiusmod tempor incididunt ut labore et</a></h3>
-						<ul>
-							<li><p>post on <a href="bsingle.html">July 28,2013</a></p></li>
-							<li><a href="bsingle.html"> James Reed</a></li>
-							<li><a href="bsingle.html"> Technology</a></li>
-							<p class="artical-para">
-								consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-							</p>
-							<a class="artbtn" href="bsingle.html">Read More</a>
-						</ul>
-					</div>
-					<div class="clear"> </div>
-				</div>
-				<div class="blog-articla-grid  portfolio1 logo1" data-cat="app">
-					<div class="blog-articla-grid-pic">
-						<a href="bsingle.html"><img src="static/images/artpic3.png" alt=" "></a>
-					</div>
-					<div class="blog-articla-grid-info">
-						<h3><a href="bsingle.html">Lorem ipsum dolor sit amet adipisicing elit?</a></h3>
-						<ul>
-							<li><p>post on <a href="bsingle.html">July 28,2013</a></p></li>
-							<li><a href="bsingle.html"> James Reed</a></li>
-							<li><a href="bsingle.html"> Technology</a></li>
-							<p class="artical-para">
-								consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-							</p>
-							<a class="artbtn" href="bsingle.html">Read More</a>
-						</ul>
-					</div>
-					<div class="clear"> </div>
-				</div>
-				
-				<div class="clear"> </div>
-			</div>
-			<div class="clear"> </div>
-			<div class="icons-pagenate">
-				<ul>
-					<li><a class="frist-page" href="#"> </a></li>
-					<li><a href="#">1 </a></li>
-					<li><a href="#">2 </a></li>
-					<li><a href="#">3 </a></li>
-					<li><a href="#">4 </a></li>
-					<li><a class="last-page" href="#"> </a></li>
-					<div class="clear"> </div>
-				</ul>
-			</div>
-			<div class="clear"> </div>
-			</div>
-		</div>
-		<!---//End-blog---->
-		<!---//End-footer---->
-		<!---//End-wrap---->
-		 </div>
-	</body>
-</html>
+                    </div>
 
+                    </div>
+                    </div>
+
+                  
+               
+                </section>
+
+                <!-- Footer -->
+                <footer>
+                  <div class="container text-center">
+                    <p>Copyright &copy; Max Greenwald 2015</p>
+                  </div>
+
+                </footer>
+
+                <!-- jQuery -->
+                <script src="static/js/jquery.js"></script>
+
+                <!-- Bootstrap Core JavaScript -->
+                <script src="static/js/bootstrap.min.js"></script>
+
+                <!-- Plugin JavaScript -->
+                <script src="static/js/jquery.easing.min.js"></script>
+
+               
+                <!-- Custom Theme JavaScript -->
+                <script src="static/js/grayscale.js"></script>
+
+              </body>
+
+              </html>
